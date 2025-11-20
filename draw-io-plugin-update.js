@@ -1,11 +1,21 @@
 Draw.loadPlugin(function(ui) {
     var graph = ui.editor.graph;
     var model = graph.getModel();
-
+	var updateInterval = parseInt(urlParams['update-interval'] || 60000);
+	
     if (ui.editor.isChromelessView()) {
-        return;
+        //return;
     }
-
+	if (updateUrlParam != null)
+		{
+			updateUrl = decodeURIComponent(updateUrlParam);
+			
+			// Creates empty file if update URL is in URL parameter
+			if (editorUi.createFile != null && editorUi.getCurrentFile() == null)
+			{
+				editorUi.createFile(editorUi.defaultFilename, null, null, null, null, null, null, true);
+			}
+	}
 	const fetchData = async () => {
 		const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWQxM2Y2ODg2MmI0ZWZmODdkYjllOGJmN2QwY2QzNSIsImlhdCI6MTc2MzU2MTY2OSwiZXhwIjoyMDc4OTIxNjY5fQ.D83V5a8SBfQ_2QSq61rUbN74gJQVNww4PUr5Km8IKyQ'; // Replace with your actual token
 		const url = 'http://192.168.3.161:8123/api/states'; // Replace with your target URL http://10.0.0.143

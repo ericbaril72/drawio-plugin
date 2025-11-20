@@ -1,9 +1,11 @@
+// copied from https://github.com/CoolZeroNL/draw-io-plugins/tree/master?tab=readme-ov-file#2-install-plugin-within-draw-io
 Draw.loadPlugin(function(ui) {
     console.log("drawio-plugin-update loaded");
     var graph = ui.editor.graph;
     var model = graph.getModel();
 
     if (ui.editor.isChromelessView()) {
+        console.log("chromeless")
         return;
     }
 
@@ -17,7 +19,7 @@ Draw.loadPlugin(function(ui) {
 
     // Adds actions
     ui.actions.addAction('resize', function() {
-
+         console.log("adding resize-resize")
         var defaultheight = 0;
         var defaultwidth = 0;
 

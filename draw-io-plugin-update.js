@@ -1,5 +1,5 @@
 Draw.loadPlugin(function(ui) {
-
+    console.log("drawio-plugin-update loaded");
     var graph = ui.editor.graph;
     var model = graph.getModel();
 

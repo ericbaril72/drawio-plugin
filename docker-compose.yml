@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  drawio:
+    image: jgraph/drawio
+    container_name: drawio
+    ports:
+      - "8080:8080" # Maps host port 8080 to container port 8080
+    restart: always
+    volumes:
+      #- /PATH_TO_YOUR_CONFIG:~/webapps/draw
+      # YOUR LOCAL /js/PreConfig.js                   file source LOCAL
+      # YOUR LOCAL /plugins/draw-io-plugin-update.js  file source LOCAL
+      
+      

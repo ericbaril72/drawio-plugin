@@ -1,0 +1,43 @@
+<mxGraphModel dx="1106" dy="179" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <root>
+    <UserObject label="" animation="show ZE9vFx78RErAM88yMcct-1 fade&#xa;wait 1000&#xa;hide ZE9vFx78RErAM88yMcct-1&#xa;wait 1000&#xa;" id="0">
+      <mxCell />
+    </UserObject>
+    <mxCell id="1" parent="0" />
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T1&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t1_total_ret" placeholders="1" entity_state="33.6" id="ZE9vFx78RErAM88yMcct-2">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="120" y="80" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T2&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t2_boiler" placeholders="1" entity_state="59.3" id="sxW42gVjFDtT_ORDwckh-1">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="280" y="80" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T7&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t7" placeholders="1" entity_state="36.1" id="sxW42gVjFDtT_ORDwckh-2">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="440" y="240" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T3&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t3_bas" placeholders="1" entity_state="50.3" id="sxW42gVjFDtT_ORDwckh-3">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="440" y="80" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T6&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t6_haut_ret" placeholders="1" entity_state="31.6" id="sxW42gVjFDtT_ORDwckh-4">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="280" y="240" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T5&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t5_haut" placeholders="1" entity_state="32.2" id="sxW42gVjFDtT_ORDwckh-5">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="120" y="240" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+    <object label="&lt;span style=&quot;font-size: 24px;&quot;&gt;T4&lt;/span&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;%entity_state%&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" entity_id="sensor.esphome_web_t4_bas_ret" placeholders="1" entity_state="44.2" id="sxW42gVjFDtT_ORDwckh-6">
+      <mxCell style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+        <mxGeometry x="600" y="80" width="120" height="120" as="geometry" />
+      </mxCell>
+    </object>
+  </root>
+</mxGraphModel>

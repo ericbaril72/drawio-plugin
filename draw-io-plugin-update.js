@@ -87,4 +87,88 @@ Draw.loadPlugin(function(ui) {
 			graph.refresh();
 	    }
 	}
+	var currentThread = null;
+	function scheduleUpdates()
+		{
+			var page = editorUi.currentPage;
+			var root = editorUi.editor.graph.getModel().getRoot();
+			var result = false;
+			
+			if (urlParams['update-url'] || (root.value != null && typeof(root.value) == 'object'))
+			{
+				if (root.value != null && typeof(root.value) == 'object')
+				{
+					updateInterval = parseInt(root.value.getAttribute('updateInterval') || updateInterval);
+					updateUrl = root.value.getAttribute('updateUrl') || updateUrl;
+				}
+				
+				if (updateUrl != null)
+				{
+					var currentXml = mxUtils.getXml(editorUi.editor.getGraphXml());
+					
+					function doUpdate()
+					{
+						if (updateUrl === 'demo')
+						{
+							parseResponse(mxUtils.getXml(createDemoResponse().documentElement));	
+							schedule();
+						}
+						else
+						{
+							mxUtils.post(updateUrl, 'xml=' + encodeURIComponent(currentXml), function(req)
+							{
+								if (page === editorUi.currentPage)
+								{
+									if (req.getStatus() >= 200 && req.getStatus() <= 300)
+									{
+										parseResponse(mxUtils.getXml(req.getDocumentElement()));
+										schedule();
+									}
+									else
+									{
+										editorUi.handleError({message: mxResources.get('error') + ' ' +
+											req.getStatus()});
+									}
+								}
+							}, function(err)
+							{
+								editorUi.handleError(err);
+							});
+						}
+					};
+					
+					function schedule()
+					{
+						currentThread = window.setTimeout(doUpdate, updateInterval);
+					};
+					
+					doUpdate();
+					result = true;
+				}
+			}
+			
+			return result;
+		};
+		
+		function startUpdates()
+		{
+			console.log("start updates")
+			var result = scheduleUpdates();
+			
+			if (result)
+			{
+				editorUi.editor.addListener('pageSelected', function()
+				{
+					window.clearTimeout(currentThread);
+					scheduleUpdates();
+				});
+			}
+			
+			return result;
+		};
+		if (!startUpdates())
+		{
+			console.log("!start updates")
+			editorUi.editor.addListener('fileLoaded', startUpdates);
+		}
 }); // end of loadplugin

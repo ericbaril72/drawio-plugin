@@ -1,24 +1,18 @@
+//http://10.0.0.143:8080/?lightbox=0&#LHomeAssistant.drawio#%7B%22pageId%22%3A%22macWGlGEMl3p2b7gNTdF%22%7D
+
 Draw.loadPlugin(function(ui) {
     var graph = ui.editor.graph;
     var model = graph.getModel();
 	var updateInterval = parseInt(urlParams['update-interval'] || 60000);
-	
+	var updateUrlParam = urlParams['update-url'];
+	var updateUrl = null;
     if (ui.editor.isChromelessView()) {
         //return;
     }
-	if (updateUrlParam != null)
-		{
-			updateUrl = decodeURIComponent(updateUrlParam);
-			
-			// Creates empty file if update URL is in URL parameter
-			if (editorUi.createFile != null && editorUi.getCurrentFile() == null)
-			{
-				editorUi.createFile(editorUi.defaultFilename, null, null, null, null, null, null, true);
-			}
-	}
+
 	const fetchData = async () => {
 		const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWQxM2Y2ODg2MmI0ZWZmODdkYjllOGJmN2QwY2QzNSIsImlhdCI6MTc2MzU2MTY2OSwiZXhwIjoyMDc4OTIxNjY5fQ.D83V5a8SBfQ_2QSq61rUbN74gJQVNww4PUr5Km8IKyQ'; // Replace with your actual token
-		const url = 'http://192.168.3.161:8123/api/states'; // Replace with your target URL http://10.0.0.143
+		const url = 'http://10.0.0.143:8123/api/states'; // Replace with your target URL http://10.0.0.143
 	
 		try {
 		    const response = await fetch(url, {
@@ -61,7 +55,8 @@ Draw.loadPlugin(function(ui) {
 	
 	function update_cells(data){
 		console.log("applying to cells")
-        if (graph.isEnabled() ) {
+        if (true || graph.isEnabled() ) {
+			console.log("graph is enabled")
             var cells = graph.getModel().cells;
 			
 			Object.keys(cells).forEach(function(key) {
@@ -90,21 +85,22 @@ Draw.loadPlugin(function(ui) {
 	var currentThread = null;
 	function scheduleUpdates()
 		{
-			var page = editorUi.currentPage;
-			var root = editorUi.editor.graph.getModel().getRoot();
+			var page = ui.currentPage;
+			var root = ui.editor.graph.getModel().getRoot();
 			var result = false;
 			
 			if (urlParams['update-url'] || (root.value != null && typeof(root.value) == 'object'))
 			{
+				console.log("goes into...");
 				if (root.value != null && typeof(root.value) == 'object')
 				{
 					updateInterval = parseInt(root.value.getAttribute('updateInterval') || updateInterval);
 					updateUrl = root.value.getAttribute('updateUrl') || updateUrl;
 				}
-				
+				console.log("updateUrl:",updateUrl);
 				if (updateUrl != null)
 				{
-					var currentXml = mxUtils.getXml(editorUi.editor.getGraphXml());
+					var currentXml = mxUtils.getXml(ui.editor.getGraphXml());
 					
 					function doUpdate()
 					{
@@ -126,13 +122,13 @@ Draw.loadPlugin(function(ui) {
 									}
 									else
 									{
-										editorUi.handleError({message: mxResources.get('error') + ' ' +
+										ui.handleError({message: mxResources.get('error') + ' ' +
 											req.getStatus()});
 									}
 								}
 							}, function(err)
 							{
-								editorUi.handleError(err);
+								ui.handleError(err);
 							});
 						}
 					};
@@ -145,7 +141,14 @@ Draw.loadPlugin(function(ui) {
 					doUpdate();
 					result = true;
 				}
+				else {
+					console.log("updateUrl is null");
+					fetchData();
+				}
 			}
+			console.log("urlParams['update-url']:",urlParams['update-url']);
+			console.log("root.value:",root.value);
+			console.log("typeof(root.value):",typeof(root.value));
 			
 			return result;
 		};
@@ -169,6 +172,6 @@ Draw.loadPlugin(function(ui) {
 		if (!startUpdates())
 		{
 			console.log("!start updates")
-			editorUi.editor.addListener('fileLoaded', startUpdates);
+			ui.editor.addListener('fileLoaded', startUpdates);
 		}
 }); // end of loadplugin
